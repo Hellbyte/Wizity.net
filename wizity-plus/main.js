@@ -14,7 +14,7 @@ var wp_config = {
 };
 
 // Enable API
-API.enable(wp_config.api, function(){
+API.enable(function(){
   wp_config.status = true;
   console.log(wp_config.name +" version "+ wp_config.version +" is running..");
 });
