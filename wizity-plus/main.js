@@ -18,3 +18,6 @@ API.enable(config.api, function(){
   config.status = true;
   console.log(config.name +" version "+ config.version +" is running..");
 });
+
+// Call testing function
+API.testor();
