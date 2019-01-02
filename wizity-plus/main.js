@@ -12,13 +12,21 @@ var wp_config = {
   }
 };
 
-// Enable API
-API.enable(function(){
+var WP_API;
+
+WP_API.onLoad = function(){
   wp_config.status = true;
   console.log(wp_config.name +" version "+ wp_config.version +" is running..");
-});
+};
 
-// Call testing function with some delay
-setTimeout(function(){
-  API.testt();
-}, 5000);
+(function(){
+  WP_API.onLoad();
+
+  // Call testing function with some delay
+  setTimeout(function(){
+    var getFirstUser = API.getUser(1);
+    
+    alert(getFirstUser.name);
+  }, 5000);
+
+}());
