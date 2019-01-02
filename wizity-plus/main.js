@@ -12,6 +12,7 @@ var wp_config = {
   }
 };
 
+// Custom script API
 var WP_API = {};
 
 WP_API.onLoad = function(){
