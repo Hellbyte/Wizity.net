@@ -1,4 +1,4 @@
-var config = {
+var wp_config = {
   name: "Wizity+",
   version: "1.0",
   status: false,
@@ -14,10 +14,12 @@ var config = {
 };
 
 // Enable API
-API.enable(config.api, function(){
-  config.status = true;
-  console.log(config.name +" version "+ config.version +" is running..");
+API.enable(wp_config.api, function(){
+  wp_config.status = true;
+  console.log(wp_config.name +" version "+ wp_config.version +" is running..");
 });
 
-// Call testing function
-API.testor();
+// Call testing function with some delay
+setTimeout(function(){
+  API.testor();
+}, 5000);
