@@ -19,14 +19,13 @@ WP_API.onLoad = function(){
   console.log(wp_config.name +" version "+ wp_config.version +" is running..");
 };
 
-(function(){
-  WP_API.onLoad();
+function(){
 
   // Call testing function with some delay
   setTimeout(function(){
     var getFirstUser = API.getUser(1);
-    
+
     alert(getFirstUser.name);
   }, 5000);
 
-}());
+}
