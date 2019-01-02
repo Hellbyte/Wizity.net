@@ -20,5 +20,5 @@ API.enable(function(){
 
 // Call testing function with some delay
 setTimeout(function(){
-  API.testor();
+  API.testt();
 }, 5000);
