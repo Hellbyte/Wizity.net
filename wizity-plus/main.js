@@ -25,9 +25,9 @@ WP_API.onLoad = function(){
 
   // Call testing function with some delay
   setTimeout(function(){
-    var getFirstUser = API.getUser(1);
+    var getFirstUsername = API.getUser(1).name;
 
-    alert(getFirstUser.name);
+    alert(getFirstUsername);
   }, 5000);
 
 }());
