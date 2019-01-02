@@ -12,14 +12,15 @@ var wp_config = {
   }
 };
 
-var WP_API;
+var WP_API = {};
 
 WP_API.onLoad = function(){
   wp_config.status = true;
   console.log(wp_config.name +" version "+ wp_config.version +" is running..");
 };
 
-function(){
+(function(){
+  WP_API.onLoad();
 
   // Call testing function with some delay
   setTimeout(function(){
@@ -28,4 +29,4 @@ function(){
     alert(getFirstUser.name);
   }, 5000);
 
-}
+}());
