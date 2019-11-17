@@ -147,7 +147,7 @@ Event fires when anyone subscribe or unsubscribe the community.
 
 ``` js
 API.on('subscribers-update', function(data){
-  if(data.type === 'subscribe') console.log(`User ${data.user.name} subscribe the community.`);
-  else if(data.type === 'unsubscribe') console.log(`User ${data.user.name} unsubscribe the community.`);
+  if(data.type === 'subscribe') console.log(`User ${data.user.name} subscribe and community has got ${data.subscribers} subscribers.`);
+  else if(data.type === 'unsubscribe') console.log(`User ${data.user.name} unsubscribe and the community has got ${data.subscribers} subscribers.`);
 });
 ```
