@@ -151,3 +151,23 @@ API.on('subscribers-update', function(data){
   else if(data.type === 'unsubscribe') console.log(`User ${data.user.name} unsubscribe and the community has got ${data.subscribers} subscribers.`);
 });
 ```
+
+### API.on('privatecommunity-update', callback)
+Event fires when community changes to private or back to public.
+
+``` js
+API.on('privatecommunity-update', function(data){
+  if(data.type === 'private') console.log(`User ${data.user.name} change community to private.`);
+  else if(data.type === 'unprivate') console.log(`User ${data.user.name} change community back to public.`);
+});
+```
+
+### API.on('lockedwaitlist-update', callback)
+Event fires when community changes to private or back to public.
+
+``` js
+API.on('lockedwaitlist-update', function(data){
+  if(data.type === 'lock') console.log(`User ${data.user.name} lock the waitlist.`);
+  else if(data.type === 'unlock') console.log(`User ${data.user.name} unlock the waitlist.`);
+});
+```
