@@ -1,9 +1,8 @@
 # Wizity Network Client API
 
 ## Actions
-
-### API.chat
-#### API.chat.send
+## API.chat
+### send
 Send a chat message to community you are in.
 
 ``` javascript
