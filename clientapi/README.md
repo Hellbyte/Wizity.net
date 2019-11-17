@@ -11,15 +11,14 @@ API.chat.send('Hello from API!');
 ```
 
 ### ~~API.chat.delete(messageid: string)~~
-Delete message from community you are currently in.
+~~Delete message from community you are currently in.~~
 
 ``` js
-API.chat.send('Hello from API!');
+API.chat.delete('testmessageid');
 ```
 
 ### API.community.subscribe()
-Subscribe a community you are in. Success when:
-* You are in any community.
+Subscribe a community you are currently in. Success when:
 * You aren't subscribing that community yet.
 
 ``` js
@@ -27,8 +26,7 @@ API.community.subscribe();
 ```
 
 ### API.community.unsubscribe()
-Unsubscribe a community you are in. Success when:
-* You are in any community.
+Unsubscribe a community you are currently in. Success when:
 * You are subscribing that community.
 
 ``` js
@@ -37,7 +35,6 @@ API.community.unsubscribe();
 
 ### API.community.private()
 Change community to private. Success when:
-* You are in any community.
 * Your rank is Founder, Admin, Global Moderator, Host or Co-Host.
 
 ``` js
@@ -46,11 +43,19 @@ API.community.private();
 
 ### API.community.unprivate()
 Change community back to public. Success when:
-* You are in any community.
 * Your rank is Founder, Admin, Global Moderator, Host or Co-Host.
 
 ``` js
 API.community.unprivate();
+```
+
+### ~~API.config.get(callback: function)~~
+~~Returns config in json.~~
+
+``` js
+~~API.config.get(function(data){
+  console.log(data);
+});~~
 ```
 
 ### API.config.toggle(feature: string)
