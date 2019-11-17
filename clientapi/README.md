@@ -163,11 +163,29 @@ API.on('privatecommunity-update', function(data){
 ```
 
 ### API.on('lockedwaitlist-update', callback)
-Event fires when community changes to private or back to public.
+Event fires when waitlist changes to lock or unlock.
 
 ``` js
 API.on('lockedwaitlist-update', function(data){
   if(data.type === 'lock') console.log(`User ${data.user.name} lock the waitlist.`);
   else if(data.type === 'unlock') console.log(`User ${data.user.name} unlock the waitlist.`);
+});
+```
+
+### API.on('community-update', callback)
+Event fires when community info has changed.
+
+``` js
+API.on('community-update', function(data){
+  console.log(`User ${data.user.name} edited name of community to ${data.community.name}.`);
+});
+```
+
+### API.on('chat-update', callback)
+Event fires when anyone sends message to community.
+
+``` js
+API.on('chat-update', function(data){
+  console.log(data);
 });
 ```
