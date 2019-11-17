@@ -53,9 +53,9 @@ API.community.unprivate();
 ~~Returns config in json.~~
 
 ``` js
-~~API.config.get(function(data){
+API.config.get(function(data){
   console.log(data);
-});~~
+});
 ```
 
 ### API.config.toggle(feature: string)
@@ -67,8 +67,7 @@ API.config.toggle('video'); // video, autolike, chatsounds, notifications
 ```
 
 ### API.song.like()
-Like a current song in community you are in. Success when:
-* You are in any community.
+Like a current song in community you are currently in. Success when:
 * Anyone is DJ and you aren't too.
 * You didn't liked a song yet.
 
@@ -77,8 +76,7 @@ API.song.like();
 ```
 
 ### API.song.grab(playlistid: string)
-Grab a current song in community you are in. Success when:
-* You are in any community.
+Grab a current song in community you are currently in. Success when:
 * TODO: dokončiť grab info
 
 ``` js
@@ -86,8 +84,7 @@ API.song.grab('YIJ9esMlgh');
 ```
 
 ### API.song.skip()
-Skip a current song in community you are in. Success when:
-* You are in any community.
+Skip a current song in community you are currently in. Success when:
 * Your rank is Founder, Admin, Global Moderator, Test Global Moderator, Host, Co-Host, Manager or Moderator.
 * Anyone is a DJ.
 
@@ -95,9 +92,18 @@ Skip a current song in community you are in. Success when:
 API.song.skip();
 ```
 
+### ~~API.song.media(callback: function)~~
+~~Get a media info about current song in community. Success when:~~
+* ~~Anyone is a DJ.~~
+
+``` js
+API.song.media(function(data){
+  console.log(data);
+});
+```
+
 ### API.waitlist.lock()
-Lock a waitlist in community you are in. Success when:
-* You are in any community.
+Lock a waitlist in community you are currently in. Success when:
 * Your rank is Founder, Admin, Global Moderator, Host or Co-Host.
 
 ``` js
@@ -106,7 +112,6 @@ API.waitlist.lock();
 
 ### API.waitlist.unlock()
 Unlock a waitlist in community you are currently in. Success when:
-* You are in any community.
 * Your rank is Founder, Admin, Global Moderator, Host or Co-Host.
 
 ``` js
@@ -115,7 +120,6 @@ API.waitlist.unlock();
 
 ### API.waitlist.join()
 Join the waitlist in community you are currently in. Success when:
-* You are in any community.
 * Waitlist is unlock.
 * You aren't a DJ and you aren't in waitlist yet.
 * Count of users in waitlist is less than 25.
@@ -126,11 +130,45 @@ API.waitlist.join();
 
 ### API.waitlist.leave()
 Leave the waitlist in community you are currently in. Success when:
-* You are in any community.
 * You are a DJ or you are in waitlist.
 
 ``` js
 API.waitlist.leave();
+```
+
+### ~~API.waitlist.users(callback: function)~~
+~~Get users in waitlist.~~
+
+``` js
+API.waitlist.users(function(data){
+  console.log(data);
+});
+```
+
+### ~~API.waitlist.swap(userid1: int, userid2: int)~~
+~~Leave the waitlist in community you are currently in. Success when:~~
+* ~~TODO: dokončiť~~
+
+``` js
+API.waitlist.swap(1, 7);
+```
+
+### ~~API.waitlist.move(userid: int, position: int)~~
+~~Move user in waitlist. Success when:~~
+* ~~TODO: dokončiť~~
+
+``` js
+API.waitlist.move(1, 1);
+```
+
+### ~~API.waitlist.history(callback: function)~~
+~~Get history of song. Success when:~~
+* ~~TODO: dokončiť~~
+
+``` js
+API.waitlist.history(function(data){
+  console.log(data);
+});
 ```
 
 ## Event handlers
@@ -153,11 +191,11 @@ API.on('users-update', function(data){
   if(data.type === 'join'){
     console.log(`User ${data.user.name} has joined to community.`);
   }
-  
+
   else if(data.type === 'leave'){
     console.log(`User ${data.user.name} has left from community.`);
   }
-  
+
 });
 ```
 
@@ -170,11 +208,11 @@ API.on('subscribers-update', function(data){
   if(data.type === 'subscribe'){
     console.log(`User ${data.user.name} subscribe and community has got ${data.subscribers} subscribers.`);
   }
-  
+
   else if(data.type === 'unsubscribe'){
     console.log(`User ${data.user.name} unsubscribe and the community has got ${data.subscribers} subscribers.`);
   }
-  
+
 });
 ```
 
@@ -187,11 +225,11 @@ API.on('privatecommunity-update', function(data){
   if(data.type === 'private'){
     console.log(`User ${data.user.name} change community to private.`);
   }
-  
+
   else if(data.type === 'unprivate'){
     console.log(`User ${data.user.name} change community back to public.`);
   }
-  
+
 });
 ```
 
@@ -204,11 +242,11 @@ API.on('lockedwaitlist-update', function(data){
   if(data.type === 'lock'){
     console.log(`User ${data.user.name} lock the waitlist.`);
   }
-  
+
   else if(data.type === 'unlock'){
     console.log(`User ${data.user.name} unlock the waitlist.`);
   }
-  
+
 });
 ```
 
