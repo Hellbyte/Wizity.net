@@ -10,8 +10,8 @@ Send a chat message to community you are currently in. Success when:
 API.chat.send('Hello from API!');
 ```
 
-### ~~API.chat.delete(messageid: string)
-Delete message from community you are currently in.~~
+### ~~API.chat.delete(messageid: string)~~
+Delete message from community you are currently in.
 
 ``` js
 API.chat.send('Hello from API!');
