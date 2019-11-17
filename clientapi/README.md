@@ -2,7 +2,7 @@
 
 ## Actions
 
-### API.chat.send(message: string)
+### API.chat.send(message[string])
 Send a chat message to community you are in. Success when:
 * __message__ parameter isn't blank.
 
