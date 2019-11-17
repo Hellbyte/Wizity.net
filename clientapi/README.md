@@ -137,8 +137,15 @@ Event fires when anyone joins or leaves the community.
 
 ``` js
 API.on('users-update', function(data){
-  if(data.type === 'join') console.log(`User ${data.user.name} has joined to community.`);
-  else if(data.type === 'leave') console.log(`User ${data.user.name} has left from community.`);
+
+  if(data.type === 'join'){
+    console.log(`User ${data.user.name} has joined to community.`);
+  }
+  
+  else if(data.type === 'leave'){
+    console.log(`User ${data.user.name} has left from community.`);
+  }
+  
 });
 ```
 
@@ -147,8 +154,15 @@ Event fires when anyone subscribe or unsubscribe the community.
 
 ``` js
 API.on('subscribers-update', function(data){
-  if(data.type === 'subscribe') console.log(`User ${data.user.name} subscribe and community has got ${data.subscribers} subscribers.`);
-  else if(data.type === 'unsubscribe') console.log(`User ${data.user.name} unsubscribe and the community has got ${data.subscribers} subscribers.`);
+
+  if(data.type === 'subscribe'){
+    console.log(`User ${data.user.name} subscribe and community has got ${data.subscribers} subscribers.`);
+  }
+  
+  else if(data.type === 'unsubscribe'){
+    console.log(`User ${data.user.name} unsubscribe and the community has got ${data.subscribers} subscribers.`);
+  }
+  
 });
 ```
 
@@ -157,8 +171,15 @@ Event fires when community changes to private or back to public.
 
 ``` js
 API.on('privatecommunity-update', function(data){
-  if(data.type === 'private') console.log(`User ${data.user.name} change community to private.`);
-  else if(data.type === 'unprivate') console.log(`User ${data.user.name} change community back to public.`);
+
+  if(data.type === 'private'){
+    console.log(`User ${data.user.name} change community to private.`);
+  }
+  
+  else if(data.type === 'unprivate'){
+    console.log(`User ${data.user.name} change community back to public.`);
+  }
+  
 });
 ```
 
@@ -167,8 +188,15 @@ Event fires when waitlist changes to lock or unlock.
 
 ``` js
 API.on('lockedwaitlist-update', function(data){
-  if(data.type === 'lock') console.log(`User ${data.user.name} lock the waitlist.`);
-  else if(data.type === 'unlock') console.log(`User ${data.user.name} unlock the waitlist.`);
+
+  if(data.type === 'lock'){
+    console.log(`User ${data.user.name} lock the waitlist.`);
+  }
+  
+  else if(data.type === 'unlock'){
+    console.log(`User ${data.user.name} unlock the waitlist.`);
+  }
+  
 });
 ```
 
