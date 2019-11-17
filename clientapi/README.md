@@ -4,7 +4,7 @@
 
 ### API.chat.send(message)
 Send a chat message to community you are in. Success when:
-* **<message>** parameter isn't blank.
+* __<message>__ parameter isn't blank.
 
 ``` js
 API.chat.send('Hello from API!');
@@ -48,7 +48,7 @@ API.community.unprivate();
 
 ### API.config.toggle(feature)
 Disable/enable a feature in user settings (config). Success when:
-* **<feature>** parameter is valid.
+* __<feature>__ parameter is valid.
 
 ``` js
 API.config.toggle('video'); // video, autolike, chatsounds, notifications
