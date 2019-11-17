@@ -2,7 +2,7 @@
 
 ## Actions
 
-### API.chat.send(message[string])
+### API.chat.send(message: string)
 Send a chat message to community you are in. Success when:
 * __message__ parameter isn't blank.
 
@@ -139,5 +139,15 @@ Event fires when anyone joins or leaves the community.
 API.on('users-update', function(data){
   if(data.type === 'join') console.log(`User ${data.user.name} has joined to community.`);
   else if(data.type === 'leave') console.log(`User ${data.user.name} has left from community.`);
+});
+```
+
+### API.on('subscribers-update', callback)
+Event fires when anyone subscribe or unsubscribe the community.
+
+``` js
+API.on('subscribers-update', function(data){
+  if(data.type === 'subscribe') console.log(`User ${data.user.name} subscribe the community.`);
+  else if(data.type === 'unsubscribe') console.log(`User ${data.user.name} unsubscribe the community.`);
 });
 ```
