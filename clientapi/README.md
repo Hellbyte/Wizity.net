@@ -46,7 +46,7 @@ Change community back to public. Success when:
 API.community.unprivate();
 ```
 
-### API.config.toggle(feature = string)
+### API.config.toggle(feature: string)
 Disable/enable a feature in user settings (config). Success when:
 * __feature__ parameter is valid.
 
