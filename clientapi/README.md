@@ -16,4 +16,11 @@ Subscribe a community you are in.
 API.community.subscribe();
 ```
 
+#### API.community.unsubscribe
+Unsubscribe a community you are in.
+
+``` js
+API.community.unsubscribe();
+```
+
 Returns a basic info about community you are in.
