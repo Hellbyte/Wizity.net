@@ -12,6 +12,10 @@ API.chat.send('Hello from API!');
 #### API.community.subscribe
 Subscribe a community you are in.
 
+Success when:
+  * You are in any community
+	* You aren't subscribing that community yet.
+
 ``` js
 API.community.subscribe();
 ```
