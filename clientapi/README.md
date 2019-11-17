@@ -3,8 +3,15 @@
 ## Actions
 
 ### API.chat.send(message: string)
-Send a chat message to community you are in. Success when:
+Send a chat message to community you are currently in. Success when:
 * __message__ parameter isn't blank.
+
+``` js
+API.chat.send('Hello from API!');
+```
+
+### ~~API.chat.delete(messageid: string)
+Delete message from community you are currently in.~~
 
 ``` js
 API.chat.send('Hello from API!');
