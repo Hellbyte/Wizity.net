@@ -2,16 +2,14 @@
 
 ## Actions
 
-### API.chat
-#### send
+#### API.chat.send
 Send a chat message to community you are in.
 
 ``` javascript
 API.chat.send('Hello from API!');
 ```
 
-### API.community
-#### subscribe
+#### API.community.subscribe
 Subscribe a community you are in.
 
 ``` js
