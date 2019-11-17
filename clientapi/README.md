@@ -205,7 +205,7 @@ Event fires when community info has changed.
 
 ``` js
 API.on('community-update', function(data){
-  console.log(`User ${data.user.name} edited name of community to ${data.community.name}.`);
+  console.log(`User ${data.user.name} changed name of community to ${data.community.name}.`);
 });
 ```
 
@@ -214,6 +214,42 @@ Event fires when anyone sends message to community.
 
 ``` js
 API.on('chat-update', function(data){
+  console.log(data);
+});
+```
+
+### API.on('song-update', callback)
+Event fires when song in community has changed.
+
+``` js
+API.on('song-update', function(data){
+  console.log(data);
+});
+```
+
+### API.on('vote-update', callback)
+Event fires when anyone vote on song.
+
+``` js
+API.on('vote-update', function(data){
+  console.log(data);
+});
+```
+
+### API.on('points-update', callback)
+Event fires when my points changed.
+
+``` js
+API.on('points-update', function(data){
+  console.log(data);
+});
+```
+
+### API.on('waitlist-update', callback)
+Event fires when anyone joins or leaves the waitlist.
+
+``` js
+API.on('waitlist-update', function(data){
   console.log(data);
 });
 ```
