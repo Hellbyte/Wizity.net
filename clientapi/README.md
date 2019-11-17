@@ -167,7 +167,7 @@ API.on('subscribers-update', function(data){
 ```
 
 ### API.on('privatecommunity-update', callback)
-Event fires when community changes to private or back to public.
+Event fires when anyone changes community to private or back to public.
 
 ``` js
 API.on('privatecommunity-update', function(data){
@@ -237,7 +237,7 @@ API.on('vote-update', function(data){
 ```
 
 ### API.on('points-update', callback)
-Event fires when my points changed.
+Event fires when my points changes.
 
 ``` js
 API.on('points-update', function(data){
