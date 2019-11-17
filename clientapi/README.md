@@ -4,7 +4,7 @@
 
 ### API.chat.send(message)
 Send a chat message to community you are in. Success when:
-* __<message>__ parameter isn't blank.
+* __message__ parameter isn't blank.
 
 ``` js
 API.chat.send('Hello from API!');
