@@ -48,10 +48,10 @@ API.community.unprivate();
 ### API.config.toggle
 Disable/enable a feature in user settings. Success when:
 * You are in any community.
-* Your rank is Founder, Admin, Global Moderator, Host or Co-Host.
+* Parameter is valid
 
 ``` js
-API.config.toggle('');
+API.config.toggle('video'); // video, autolike, chatsounds, notifications
 ```
 
 Returns a basic info about community you are in.
