@@ -2,7 +2,7 @@
 
 ## Actions
 
-### API.chat.send(message)
+### API.chat.send(message: string)
 Send a chat message to community you are in. Success when:
 * __message__ parameter isn't blank.
 
@@ -46,9 +46,9 @@ Change community back to public. Success when:
 API.community.unprivate();
 ```
 
-### API.config.toggle(feature)
+### API.config.toggle(feature = string)
 Disable/enable a feature in user settings (config). Success when:
-* __<feature>__ parameter is valid.
+* __feature__ parameter is valid.
 
 ``` js
 API.config.toggle('video'); // video, autolike, chatsounds, notifications
@@ -74,7 +74,7 @@ Like a current song in community you are in. Success when:
 API.song.like();
 ```
 
-### API.song.grab(playlistid)
+### API.song.grab(playlistid: string)
 Grab a current song in community you are in. Success when:
 * You are in any community.
 * TODO: dokončiť grab info
