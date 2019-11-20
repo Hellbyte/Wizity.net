@@ -6,8 +6,11 @@ const bot = {
   API: {
 
     onstart: function(){
-      bot.status = true;
-      API.chat.send(`Bot version ${bot.version} created by Hellbyte is successfully enabled.`);
+      API.config.get(function(data){
+        bot.status = true;
+        API.chat.send(`Bot version ${bot.version} created by Hellbyte is successfully enabled.`);
+        if(data.autolike) API.song.like();
+      });
     }
 
   }
