@@ -2,34 +2,35 @@ const bot = {
   status: false,
   name: "TestBot",
   version: "1.0",
-  users: [],
+  community: {
+    users: []
+  },
   API: {
 
-    onstart: function(){
-      API.config.get(function(data){
-        bot.status = true;
-        API.chat.send(`Bot version ${bot.version} created by Hellbyte is successfully enabled.`);
-        if(data.autolike) API.song.like();
-      });
+    enable: function(){
+      bot.status = true;
+      API.chat.send(`${bot.name} version ${bot.version} is successfully enabled.`);
+      API.song.like();
     }
 
   }
 };
 
 (function(){
-  bot.API.onstart();
+  bot.API.enable();
 
+  // Handle users-update fold-here
   API.on('users-update', function(data){
     if(!bot.status) return;
 
     if(data.type === 'join'){
 
-      if(bot.users.includes(data.user.id)){
+      if(bot.community.users.includes(data.user.id)){
         API.chat.send(`Welcome back @${data.user.name}.`);
       }
 
       else{
-        bot.users.push(data.user.id);
+        bot.community.users.push(data.user.id);
         API.chat.send(`Welcome @${data.user.name} to this community.`);
       }
 
@@ -40,5 +41,21 @@ const bot = {
     }
 
   });
+  /**********************************************************************************************/
+
+  // Handle chat-update fold-here
+  API.on('chat-update', function(data){
+    if(data.type !== 'message') return;
+
+    const text = data.message.text.toString();
+    const params = text.split(' ');
+    const command = params[0].substring(1).toLowerCase();
+
+    if(command === 'hello'){
+      API.chat.send(`@${data.user.name} Heyooo! How are you today bro? :blush:`);
+    }
+
+  });
+  /**********************************************************************************************/
 
 }());
