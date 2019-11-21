@@ -53,7 +53,12 @@ const bot = {
     const command = params[0].substring(1).toLowerCase();
 
     if(command === 'hello'){
-      API.chat.send(`@${data.user.name} Heyooo! How are you today bro? :blush:`);
+      API.chat.send(`@${data.user.name} Hi! How are you today bro? :blush:`);
+    }
+    
+    else if(command === 'grab'){
+      API.song.grab('WOIDim96sG');
+      API.chat.send('I grabbed a song! <3');
     }
 
   });
