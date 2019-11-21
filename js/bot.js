@@ -46,6 +46,7 @@ const bot = {
   // Handle chat-update fold-here
   API.on('chat-update', function(data){
     if(data.type !== 'message') return;
+    if(!data.message.text.toString().startsWith('!')) return;
 
     const text = data.message.text.toString();
     const params = text.split(' ');
