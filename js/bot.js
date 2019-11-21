@@ -58,7 +58,7 @@ const bot = {
     
     else if(command === 'grab'){
       API.song.grab('WOIDim96sG');
-      API.chat.send('I grabbed a song! <3');
+      API.chat.send('I grabbed a song!');
     }
 
   });
