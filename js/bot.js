@@ -1,7 +1,7 @@
 const bot = {
   status: false,
-  name: "TestBot",
-  version: "1.0",
+  name: `TestBot`,
+  version: `1.0`,
   community: {
     users: []
   },
@@ -16,14 +16,14 @@ const bot = {
   }
 };
 
-(function(){
+(() => {
   bot.API.enable();
 
   // Handle users-update fold-here
-  API.on('users-update', function(data){
+  API.on(`users-update`, (data) => {
     if(!bot.status) return;
 
-    if(data.type === 'join'){
+    if(data.type === `join`){
 
       if(bot.community.users.includes(data.user.id)){
         API.chat.send(`Welcome back @${data.user.name}.`);
@@ -36,7 +36,7 @@ const bot = {
 
     }
 
-    else if(data.type === 'leave'){
+    else if(data.type === `leave`){
       API.chat.send(`@${data.user.name} left our community. :(`);
     }
 
@@ -44,21 +44,21 @@ const bot = {
   /**********************************************************************************************/
 
   // Handle chat-update fold-here
-  API.on('chat-update', function(data){
-    if(data.type !== 'message') return;
-    if(!data.message.text.toString().startsWith('!')) return;
+  API.on(`chat-update`, (data) => {
+    if(data.type !== `message`) return;
+    if(!data.message.text.toString().startsWith(`!`)) return;
 
     const text = data.message.text.toString();
-    const params = text.split(' ');
+    const params = text.split(` `);
     const command = params[0].substring(1).toLowerCase();
 
-    if(command === 'hello'){
+    if(command === `hello`){
       API.chat.send(`@${data.user.name} Hi! How are you today bro? :blush:`);
     }
-    
-    else if(command === 'grab'){
-      API.song.grab('WOIDim96sG');
-      API.chat.send('I grabbed a song!');
+
+    else if(command === `grab`){
+      API.song.grab(`WOIDim96sG`);
+      API.chat.send(`I grabbed a song!`);
     }
 
   });
