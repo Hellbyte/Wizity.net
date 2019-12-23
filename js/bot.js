@@ -16,7 +16,7 @@ const bot = {
   }
 };
 
-(() => {
+(function(){
   bot.API.enable();
 
   // Handle users-update fold-here
