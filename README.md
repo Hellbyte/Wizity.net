@@ -1,5 +1,5 @@
 # Wizity Network
-Social network with real time music playing and chatting with other people all around the world. Created with ❤ in eastern Slovakia.
+Social network with real time music playing and chatting with other people all around the world. Created with ❤ in Europe.
 
 ### ClientAPI
 Our official documented API.
